@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Chapter2
+namespace MODUL_3
 {
     class Employee
     {
