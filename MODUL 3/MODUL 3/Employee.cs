@@ -33,6 +33,15 @@ namespace MODUL_3
             get { return _securityLevel; }
         }
 
+        //constructor
+        public Employee() { }
+
+        public Employee(string loginName, string password)
+        {
+            LoginName = loginName;
+            Password = password;
+        }
+
         public Boolean Login(string loginName, string password)
         {
             if (loginName == "Jono" & password == "wkwk")

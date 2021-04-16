@@ -22,11 +22,10 @@ namespace MODUL_3
             this.Close();
         }
 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee();
-            employee.LoginName = tbUsername.Text;
-            employee.Password = tbPassword.Text;
+            Employee employee = new Employee(tbUsername.Text, tbPassword.Text);
 
             if(employee.Login (employee.LoginName, employee.Password))
             {
