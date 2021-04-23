@@ -11,6 +11,14 @@ namespace Chapter_4
 {
     class QRManager
     {
+        public static void TukarInfo ( ref TextBox textBox1, ref TextBox textBox2)
+        {
+            string temp = textBox1.Text;
+            textBox1.Text = textBox2.Text;
+            textBox2.Text = temp;
+        }
+
+
 
     }
 }

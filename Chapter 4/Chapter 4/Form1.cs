@@ -12,7 +12,9 @@ namespace Chapter_4
 
         private void btTukar_Click(object sender, EventArgs e)
         {
-
+            QRManager.TukarInfo(ref tbNamaPenerima, ref tbNamaPengirim);
+            QRManager.TukarInfo(ref tbAlamatAsal, ref tbAlamatTujuan);
+            QRManager.TukarInfo(ref tbHpPenerima, ref tbHpPengirim);
         }
 
         private void btProses_Click(object sender, EventArgs e)
