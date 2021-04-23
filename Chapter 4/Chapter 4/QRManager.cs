@@ -18,7 +18,27 @@ namespace Chapter_4
             textBox2.Text = temp;
         }
 
+        public static string GenerateInfo (string namaAsal, string alamatAsal, string noHpAsal, 
+            string namaTujuan, string alamatTujuan, string noHpTujuan)
+        {
+            string result = '#' + namaAsal + '*' + alamatAsal + '*' + noHpAsal + '*' + namaTujuan + '*' +
+                alamatTujuan + '*' + noHpTujuan;
+            return result;
+        }
 
+        public static string GenerateInfo(string namaAsal, string alamatAsal, string noHpAsal,
+            string namaTujuan, string alamatTujuan, string noHpTujuan, out Bitmap Qrbitmap)
+        {
+            string text = GenerateInfo(namaAsal, alamatAsal, noHpAsal, namaTujuan, alamatTujuan, noHpTujuan);
+
+            QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
+            QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+            QRCode qRCode = new QRCode(qRCodeData);
+            Qrbitmap = qRCode.GetGraphic(20);
+
+            return text;
+
+        }
 
     }
 }

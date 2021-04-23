@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Chapter_4
 {
@@ -19,7 +20,16 @@ namespace Chapter_4
 
         private void btProses_Click(object sender, EventArgs e)
         {
-
+            Bitmap qr;
+            tbQr.Text = QRManager.GenerateInfo(
+                tbNamaPengirim.Text,
+                tbAlamatAsal.Text,
+                tbHpPengirim.Text,
+                tbNamaPenerima.Text,
+                tbAlamatTujuan.Text,
+                tbHpPenerima.Text, out qr);
+            pbQR.Image = qr;
+            
         }
     }
 }
